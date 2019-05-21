@@ -1,0 +1,5 @@
+
+Se till att användaren ser när registrering, postning och inloggning lyckats
+Styla post och registrerings sidorna. 
+Kommentera din kod
+ändra till post? 
