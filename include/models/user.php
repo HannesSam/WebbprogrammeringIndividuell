@@ -20,7 +20,7 @@ class User
                 echo "Error when adding user";
             }
         } else {
-            echo "Please input valid values";
+            echo "E-mail already in use, please login";
         }
     }
 

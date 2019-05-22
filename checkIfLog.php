@@ -8,7 +8,7 @@ if (isset($_SESSION['userID'])) {
     <form name="form">
       <input id="emailLogin" type="text" placeholder="E-mail" name="email">
       <input id="passwordLogin" type="password" placeholder="Password" name="password">
-      <button id="submitLogin" type="submit">Login</button>
+      <button id="submitLogin" type="button">Login</button>
     </form>
   </div>';
   echo '<a id="register">Register</a>';

@@ -7,7 +7,7 @@
             <br>
             <textarea name="text" id="textPost" cols="30" rows="10" placeholder="Text" name="text"></textarea>
             <br>
-            <input id="submitPost" type="submit">
+            <input id="submitPost" type="button">
         </form>
     </div>
     <div class="postsDiv hiddenDivs" id="registerDiv">
@@ -18,8 +18,8 @@
             <input id="emailRegister" type="text" name="email" placeholder="Email" />
             <br />
             <h3>Lösenord:</h3>
-            <input type="password" name="password" placeholder="Lösenord" />
-            <button id="submitRegister" type="submit"></button>
+            <input id="passwordRegister" type="password" name="password" placeholder="Lösenord" />
+            <button id="submitRegister" type="button"></button>
     </div>
     <?php
     include 'include/views/_post-list.php';
