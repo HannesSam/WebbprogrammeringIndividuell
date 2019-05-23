@@ -1,4 +1,5 @@
 <?php
+require 'include/bootstrap.php';
 $result = Post::getPosts();
 while ($row = $result->fetch_assoc()) {
     $userID = $row["userID"];

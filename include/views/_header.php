@@ -1,4 +1,4 @@
-<?php require 'include/bootstrap.php';
+<?php //require 'include/bootstrap.php';
 ?>
 
 <!DOCTYPE html>
@@ -13,13 +13,13 @@
     <script src="/assets/js/app.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto:400" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-    <title>Labb 1.1</title>
+    <title>The Code Blog</title>
 </head>
 
 <body>
     <div id="wrapper">
         <div class="headerTop">
-            <h1>Header <i class="fas fa-code"></i>
+            <h1>The Code Blog <i class="fas fa-code"></i>
 
             </h1>
         </div>

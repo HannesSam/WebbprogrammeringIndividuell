@@ -22,13 +22,18 @@ $(document).ready(function() {
           password: $("#passwordRegister").val()
         },
         function(data) {
-          alert(data);
+          $("#registerDiv").html("<p id='feedbackText'>" + data + "</p>");
+          setTimeout(hideRegister, 2500);
         }
       );
     } else {
     }
   });
 });
+
+function hideRegister() {
+  $("#registerDiv").toggle(500);
+}
 
 function valideraRegister() {
   var userName = $("#userNameRegister").val();
@@ -64,7 +69,7 @@ $(document).ready(function() {
         "logginDB.php",
         { password: $("#passwordLogin").val(), email: $("#emailLogin").val() },
         function(data) {
-          alert(data);
+          location.reload();
         }
       );
     } else {
@@ -94,13 +99,19 @@ $(document).ready(function() {
         "makePostDB.php",
         { header: $("#headerPost").val(), text: $("#textPost").val() },
         function(data) {
-          alert(data);
+          $("#containerForPosts").load("_post-list.php");
+          $("#makePostDiv").html("<p id='feedbackText'>" + data + "</p>");
+          setTimeout(hideMakePost, 2500);
         }
       );
     } else {
     }
   });
 });
+
+function hideMakePost() {
+  $("#makePostDiv").toggle(500);
+}
 
 function valideraPost() {
   var header = $("#headerPost").val();

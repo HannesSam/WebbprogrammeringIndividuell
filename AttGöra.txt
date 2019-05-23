@@ -1,5 +1,3 @@
-
-Se till att användaren ser när registrering, postning och inloggning lyckats
 Styla post och registrerings sidorna. 
-Kommentera din kod
-ändra till post? 
+Kommentera din kod.
+Försök flytta tillbaka post-list funktionen utan att allt ballar ur. 
