@@ -84,15 +84,21 @@ input[type="password"] {
 }
 
 .header {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
 .userName {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
 .text {
+  font-family: "Times New Roman", Times, serif;
 }
 
 .footer {
+  font-family: "Times New Roman", Times, serif;
   background-color: #f1f1f1;
   text-align: center;
   padding: 10px;

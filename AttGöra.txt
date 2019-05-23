@@ -1,3 +1,4 @@
 Styla post och registrerings sidorna. 
 Kommentera din kod.
 Försök flytta tillbaka post-list funktionen utan att allt ballar ur. 
+skydda process sidorna genom att kolla om get isset 

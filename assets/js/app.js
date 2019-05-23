@@ -12,7 +12,7 @@ $(document).ready(function() {
 
 //Validering och funktioner för registrering
 $(document).ready(function() {
-  $("#submitRegister").click(function() {
+  $("#submitRegister").on("click", function() {
     if (valideraRegister()) {
       $.get(
         "registerDB.php",
@@ -24,6 +24,7 @@ $(document).ready(function() {
         function(data) {
           $("#registerDiv").html("<p id='feedbackText'>" + data + "</p>");
           setTimeout(hideRegister, 2500);
+          $("#makePostDiv").load("include/views/_registerDiv.php");
         }
       );
     } else {
@@ -33,6 +34,9 @@ $(document).ready(function() {
 
 function hideRegister() {
   $("#registerDiv").toggle(500);
+  setTimeout(function() {
+    $("#registerDiv").load("include/views/_registerDiv.php");
+  }, 500);
 }
 
 function valideraRegister() {
@@ -92,25 +96,28 @@ function valideraLogin() {
 }
 
 //validering och funktioner för make post
-$(document).ready(function() {
-  $("#submitPost").click(function() {
-    if (valideraPost()) {
-      $.get(
-        "makePostDB.php",
-        { header: $("#headerPost").val(), text: $("#textPost").val() },
-        function(data) {
-          $("#containerForPosts").load("_post-list.php");
-          $("#makePostDiv").html("<p id='feedbackText'>" + data + "</p>");
-          setTimeout(hideMakePost, 2500);
-        }
-      );
-    } else {
-    }
-  });
+$("#submitPost").on("click", function() {
+  if (valideraPost()) {
+    $.get(
+      "makePostDB.php",
+      { header: $("#headerPost").val(), text: $("#textPost").val() },
+      function(data) {
+        $("#containerForPosts").load("_post-list.php");
+        $("#makePostDiv").html("<p id='feedbackText'>" + data + "</p>");
+        setTimeout(hideMakePost, 2500);
+      }
+    );
+  } else {
+  }
 });
+
+//dölj med css istället
 
 function hideMakePost() {
   $("#makePostDiv").toggle(500);
+  setTimeout(function() {
+    $("#makePostDiv").load("include/views/_postDiv.php");
+  }, 500);
 }
 
 function valideraPost() {
