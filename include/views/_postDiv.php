@@ -1,4 +1,4 @@
-<form class="formPostRegister">
+<form class="formPost">
     <input id="headerPost" type="text" placeholder="Header" name="header">
     <br>
     <textarea name="text" id="textPost" placeholder="Text" name="text"></textarea>

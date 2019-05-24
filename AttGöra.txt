@@ -1,4 +1,3 @@
-Styla registrerings sidorna. 
 Kommentera din kod.
 Försök flytta tillbaka post-list funktionen utan att allt ballar ur. 
 styla texten så den ser ut som kod

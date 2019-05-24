@@ -1,10 +1,12 @@
-<form name="form">
-    <h3>User Name:</h3>
-    <input id="userNameRegister" type="text" name="userName" placeholder="userName" />
+<form class="formPostRegister">
+    <label for="userName"><b>User Name</b></label> <br>
+    <input id="userNameRegister" type="text" name="userName" placeholder="User Name" />
     <br />
-    <h3>E-mail:</h3>
-    <input id="emailRegister" type="text" name="email" placeholder="Email" />
+    <label for="email"><b>E-mail</b></label> <br>
+    <input id="emailRegister" type="text" name="email" placeholder="E-mail" />
     <br />
-    <h3>Password:</h3>
-    <input id="passwordRegister" type="password" name="password" placeholder="Lösenord" />
-    <button id="submitRegister" type="button"></button>
+    <label for="password"><b>Password</b></label> <br>
+    <input id="passwordRegister" type="password" name="password" placeholder="Password" />
+    <br>
+    <button id="submitRegister" type="button">Register</button>
+</form>
