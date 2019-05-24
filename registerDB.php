@@ -1,7 +1,11 @@
 <?php
 require 'include/bootstrap.php';
 
-$email = $_GET["email"];;
-$password = $_GET["password"];
-$userName = $_GET["userName"];
+if (!isset($_POST["email"])) {
+    header("location: index.php");
+}
+
+$email = $_POST["email"];;
+$password = $_POST["password"];
+$userName = $_POST["userName"];
 User::addUser($userName, $email, $password);

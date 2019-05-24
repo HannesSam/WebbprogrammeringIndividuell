@@ -11,25 +11,24 @@ $(document).ready(function() {
 });
 
 //Validering och funktioner för registrering
-$(document).ready(function() {
-  $("#submitRegister").on("click", function() {
-    if (valideraRegister()) {
-      $.get(
-        "registerDB.php",
-        {
-          userName: $("#userNameRegister").val(),
-          email: $("#emailRegister").val(),
-          password: $("#passwordRegister").val()
-        },
-        function(data) {
-          $("#registerDiv").html("<p id='feedbackText'>" + data + "</p>");
-          setTimeout(hideRegister, 2500);
-          $("#makePostDiv").load("include/views/_registerDiv.php");
-        }
-      );
-    } else {
-    }
-  });
+
+$(document).on("click", "#submitRegister", function() {
+  if (valideraRegister()) {
+    $.post(
+      "registerDB.php",
+      {
+        userName: $("#userNameRegister").val(),
+        email: $("#emailRegister").val(),
+        password: $("#passwordRegister").val()
+      },
+      function(data) {
+        $("#registerDiv").html("<p id='feedbackText'>" + data + "</p>");
+        setTimeout(hideRegister, 2500);
+        $("#makePostDiv").load("include/views/_registerDiv.php");
+      }
+    );
+  } else {
+  }
 });
 
 function hideRegister() {
@@ -69,7 +68,7 @@ function valideraRegister() {
 $(document).ready(function() {
   $("#submitLogin").click(function() {
     if (valideraLogin()) {
-      $.get(
+      $.post(
         "logginDB.php",
         { password: $("#passwordLogin").val(), email: $("#emailLogin").val() },
         function(data) {
@@ -96,9 +95,9 @@ function valideraLogin() {
 }
 
 //validering och funktioner för make post
-$("#submitPost").on("click", function() {
+$(document).on("click", "#submitPost", function() {
   if (valideraPost()) {
-    $.get(
+    $.post(
       "makePostDB.php",
       { header: $("#headerPost").val(), text: $("#textPost").val() },
       function(data) {
@@ -110,8 +109,6 @@ $("#submitPost").on("click", function() {
   } else {
   }
 });
-
-//dölj med css istället
 
 function hideMakePost() {
   $("#makePostDiv").toggle(500);

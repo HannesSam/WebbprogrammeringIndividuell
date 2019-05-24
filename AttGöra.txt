@@ -1,4 +1,4 @@
-Styla post och registrerings sidorna. 
+Styla registrerings sidorna. 
 Kommentera din kod.
 Försök flytta tillbaka post-list funktionen utan att allt ballar ur. 
-skydda process sidorna genom att kolla om get isset 
+styla texten så den ser ut som kod
