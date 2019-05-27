@@ -17,7 +17,6 @@ input[type="password"] {
 }
 
 .topnav {
-  position: -webkit-sticky; /* For Safari I think*/
   position: sticky;
   top: 0;
   overflow: hidden;
@@ -178,7 +177,6 @@ input[type="password"] {
 .formPostRegister {
   display: inline-block;
   width: 40%;
-  /* display: none;*/
 }
 .formPostRegister label {
   float: left;
