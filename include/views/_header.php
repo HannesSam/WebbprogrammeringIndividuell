@@ -18,7 +18,6 @@
     <div id="wrapper">
         <div class="headerTop">
             <h1>The Code Blog <i class="fas fa-code"></i>
-
             </h1>
         </div>
 
