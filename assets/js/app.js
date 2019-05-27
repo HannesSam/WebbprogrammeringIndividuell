@@ -1,30 +1,49 @@
 $(document).ready(function() {
   $("#makePost").click(function() {
-    $("#makePostDiv").toggle(500);
+    $("html, body")
+      .animate({ scrollTop: 0 }, "slow")
+      .promise()
+      .then(function() {
+        $("#makePostDiv").toggle(500);
+      });
   });
 });
 
 $(document).ready(function() {
   $("#register").click(function() {
-    $("#registerDiv").toggle(500);
+    $("html, body")
+      .animate({ scrollTop: 0 }, "slow")
+      .promise()
+      .then(function() {
+        $("#registerDiv").toggle(500);
+      });
   });
 });
 
 //Validering och funktioner för registrering
-
 $(document).on("click", "#submitRegister", function() {
-  if (valideraRegister()) {
+  var userName = $("#registerDiv")
+    .find("#userNameRegister")
+    .val();
+  var email = $("#registerDiv")
+    .find("#emailRegister")
+    .val();
+  var password = $("#registerDiv")
+    .find("#passwordRegister")
+    .val();
+
+  if (valideraRegister(userName, email, password)) {
     $.post(
       "registerDB.php",
       {
-        userName: $("#userNameRegister").val(),
-        email: $("#emailRegister").val(),
-        password: $("#passwordRegister").val()
+        password: password,
+        userName: userName,
+        email: email
       },
       function(data) {
-        $("#registerDiv").html("<p id='feedbackText'>" + data + "</p>");
-        setTimeout(hideRegister, 2500);
-        $("#makePostDiv").load("include/views/_registerDiv.php");
+        $("#registerDiv").html("<h3 id='feedbackText'>" + data + "</h3>");
+        $("#registerFeedbackDiv").toggle(50);
+        setTimeout(hideRegister, 3500);
       }
     );
   } else {
@@ -38,14 +57,7 @@ function hideRegister() {
   }, 500);
 }
 
-function valideraRegister() {
-  var userName = $("#userNameRegister").val();
-  userName = userName.trim();
-  var email = $("#emailRegister").val();
-  email = email.trim();
-  var password = $("#passwordRegister").val();
-  password = password.trim();
-
+function valideraRegister(userName, email, password) {
   if (userName == "" || email == "" || password == "") {
     alert("Vänligen fyll i alla fält");
     return false;
@@ -96,16 +108,18 @@ function valideraLogin() {
 
 //validering och funktioner för make post
 $(document).on("click", "#submitPost", function() {
-  if (valideraPost()) {
-    $.post(
-      "makePostDB.php",
-      { header: $("#headerPost").val(), text: $("#textPost").val() },
-      function(data) {
-        $("#containerForPosts").load("_post-list.php");
-        $("#makePostDiv").html("<p id='feedbackText'>" + data + "</p>");
-        setTimeout(hideMakePost, 2500);
-      }
-    );
+  var header = $("#makePostDiv")
+    .find("#headerPost")
+    .val();
+  var text = $("#makePostDiv")
+    .find("#textPost")
+    .val();
+  if (valideraPost(header, text)) {
+    $.post("makePostDB.php", { header: header, text: text }, function(data) {
+      $("#containerForPosts").load("postList.php");
+      $("#makePostDiv").html("<h3 id='feedbackText'>" + data + "</h3>");
+      setTimeout(hideMakePost, 3500);
+    });
   } else {
   }
 });
@@ -117,12 +131,7 @@ function hideMakePost() {
   }, 500);
 }
 
-function valideraPost() {
-  var header = $("#headerPost").val();
-  header = header.trim();
-  var text = $("#textPost").val();
-  text = text.trim();
-
+function valideraPost(header, text) {
   if (header == "" || text == "") {
     alert("Vänligen fyll i alla fält");
     return false;

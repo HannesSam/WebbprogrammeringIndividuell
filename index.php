@@ -16,7 +16,7 @@
 
     <div id="containerForPosts">
         <?php
-        include '_post-list.php';
+        include 'postList.php';
         ?>
     </div>
     <?php

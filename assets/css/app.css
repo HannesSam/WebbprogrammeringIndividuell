@@ -17,6 +17,9 @@ input[type="password"] {
 }
 
 .topnav {
+  position: -webkit-sticky; /* For Safari I think*/
+  position: sticky;
+  top: 0;
   overflow: hidden;
   background-color: #333;
 }
@@ -36,21 +39,18 @@ input[type="password"] {
   cursor: pointer;
 }
 
-/* Style the input container */
 .topnav .login-container {
   float: right;
 }
 
-/* Style the input field inside the navbar */
 .topnav input {
   padding: 6px;
   margin-top: 8px;
   font-size: 17px;
   border: none;
-  width: 150px; /* adjust as needed (as long as it doesn't break the topnav) */
+  width: 150px;
 }
 
-/* Style the button inside the input container */
 .topnav .login-container button {
   float: right;
   padding: 6px;
@@ -66,6 +66,10 @@ input[type="password"] {
   background: #ccc;
 }
 
+.hiddenDivs {
+  display: none;
+}
+
 .postsDiv {
   margin: 2% auto;
   width: 80%;
@@ -76,29 +80,31 @@ input[type="password"] {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.hiddenDivs {
+#registerFeedbackDiv {
   display: none;
+}
+#feedbackText {
+  text-align: center;
+}
+.postContainer {
+  width: 100%;
+  display: inline-block;
 }
 
 .header {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  float: left;
+  margin: 0;
 }
 
 .userName {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  float: left;
+  margin: 0;
 }
 
 .text {
-  font-family: "Times New Roman", Times, serif;
-}
-
-.footer {
-  font-family: "Times New Roman", Times, serif;
-  background-color: #f1f1f1;
-  text-align: center;
-  padding: 10px;
+  text-align: left;
+  float: left;
+  margin-bottom: 0%;
 }
 
 .formPost {
@@ -119,7 +125,7 @@ input[type="password"] {
   padding: 12px 20px;
   margin: 8px 0;
   width: 100%;
-  height: 30em;
+  height: 20em;
 }
 #submitPost {
   border-radius: 4px;
@@ -170,9 +176,18 @@ input[type="password"] {
 }
 
 .formPostRegister {
-  width: 40%;
   display: inline-block;
+  width: 40%;
+  /* display: none;*/
 }
 .formPostRegister label {
   float: left;
+}
+
+.footer {
+  font-family: "Times New Roman", Times, serif;
+  background-color: #333;
+  color: #c0c0c0;
+  text-align: center;
+  padding: 10px;
 }

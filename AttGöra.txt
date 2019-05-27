@@ -1,4 +1,0 @@
-Kommentera din kod.
-Försök flytta tillbaka post-list funktionen utan att allt ballar ur. 
-styla inläggen
-Kolla om du kan göra något annat med check if log.
